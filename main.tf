@@ -70,5 +70,5 @@ EOF
 }
  
 output "public_ip" {
-  value = aws_instance.web3.public_ip
+  value = aws_instance.web5.public_ip
 }
