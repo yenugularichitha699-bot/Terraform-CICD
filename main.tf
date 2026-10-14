@@ -1,5 +1,5 @@
 resource "aws_security_group" "web_sg" {
-  name = "web-sg"
+  name = "web-sg-terraform"
 
   ingress {
     from_port   = 80
@@ -8,6 +8,7 @@ resource "aws_security_group" "web_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
 
 resource "aws_instance" "web1" {
   ami           = "ami-03d75ab52ca8481aa"
