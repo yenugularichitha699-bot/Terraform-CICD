@@ -1,6 +1,6 @@
 
 resource "aws_security_group" "web_sg" {
-  name        = "web-sg2-terraform"
+  name        = "web-sg3-terraform"
   description = "Allow SSH and HTTP"
  
   ingress {
@@ -27,7 +27,7 @@ resource "aws_security_group" "web_sg" {
   }
  
   tags = {
-    Name = "web-sg2-terraform"
+    Name = "web-sg3-terraform"
   }
 }
  
