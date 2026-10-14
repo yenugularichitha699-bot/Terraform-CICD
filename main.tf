@@ -1,6 +1,6 @@
 
 resource "aws_security_group" "web_sg" {
-  name        = "web-sg4.0-terraform"
+  name        = "web-sg5-terraform"
   description = "Allow SSH and HTTP"
  
   ingress {
@@ -29,7 +29,7 @@ resource "aws_security_group" "web_sg" {
  
 }
  
-resource "aws_instance" "web3.0" {
+resource "aws_instance" "web5" {
  
   ami           = "ami-03d75ab52ca8481aa"
   instance_type = "t3.micro"
