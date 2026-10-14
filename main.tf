@@ -1,6 +1,6 @@
 
 resource "aws_security_group" "web_sg" {
-  name        = "web-sg3-terraform"
+  name        = "web-sg4-terraform"
   description = "Allow SSH and HTTP"
  
   ingress {
@@ -27,11 +27,11 @@ resource "aws_security_group" "web_sg" {
   }
  
   tags = {
-    Name = "web-sg3-terraform"
+    Name = "web-sg4-terraform"
   }
 }
  
-resource "aws_instance" "web2" {
+resource "aws_instance" "web3" {
  
   ami           = "ami-03d75ab52ca8481aa"
   instance_type = "t2.micro"
@@ -67,10 +67,10 @@ HTML
 EOF
  
   tags = {
-    Name = "web-server-1"
+    Name = "web-server-2"
   }
 }
  
 output "public_ip" {
-  value = aws_instance.web2.public_ip
+  value = aws_instance.web3.public_ip
 }
