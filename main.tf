@@ -1,5 +1,5 @@
 resource "aws_security_group" "web_sg" {
-  name = "web-sg1-terraform"
+  name = "web-sg2-terraform"
 
   ingress {
     from_port   = 80
