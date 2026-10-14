@@ -16,7 +16,7 @@ resource "aws_security_group" "web_sg" {
 }
 
 
-resource "aws_instance" "web1" {
+resource "aws_instance" "web2" {
   ami           = "ami-03d75ab52ca8481aa"
   instance_type = var.instance_type
 
@@ -24,28 +24,24 @@ resource "aws_instance" "web1" {
     aws_security_group.web_sg.name
   ]
 
+  user_data_replace_on_change = true
+
   user_data = <<-EOF
 #!/bin/bash
-
 dnf update -y
 dnf install nginx -y
-
 systemctl enable nginx
 systemctl start nginx
 
 cat > /usr/share/nginx/html/index.html <<HTML
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Terraform CI/CD Demo</title>
-</head>
 <body>
-    <h1>Welcome to Terraform CI/CD Demo</h1>
-    <p>Website deployed automatically using Terraform and GitHub Actions.</p>
+<h1>Welcome to Terraform CI/CD Demo</h1>
+<p>Website deployed using GitHub Actions and Terraform</p>
 </body>
 </html>
 HTML
-
 EOF
 
   tags = {
